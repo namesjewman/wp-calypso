@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/bundler/css-hot-reload.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">server/bundler</a> css-hot-reload.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Module dependencies
+ */
+const fs <span class="cstat-no" title="statement not covered" >= require( 'fs</span>' ),
+	path =<span class="cstat-no" title="statement not covered" > require( 'path'</span> ),
+	spawn =<span class="cstat-no" title="statement not covered" > require( 'child_process' ).spa</span>wn,
+	debug =<span class="cstat-no" title="statement not covered" > require( 'debug' )( 'calypso:bundler:css-hot-reloa</span>d' ),
+	chalk =<span class="cstat-no" title="statement not covered" > require( 'chalk'</span> ),
+	chokidar =<span class="cstat-no" title="statement not covered" > require('chokidar')</span>,
+	md5File =<span class="cstat-no" title="statement not covered" > require('md5-file')</span>;
+&nbsp;
+/**
+ * Initialize server CSS hot-reloading logic
+ */
+function <span class="fstat-no" title="function not covered" >setup(</span> io ) {
+&nbsp;
+	const SCSS_PATHS <span class="cstat-no" title="statement not covered" >= [</span>
+		path.join( '.', 'assets', 'stylesheets' ),
+		path.join( '.', 'client' ),
+	];
+	const ROOT_DIR <span class="cstat-no" title="statement not covered" >= path.resolve( __dirname, '..', '..</span>' );
+	const PUBLIC_DIR <span class="cstat-no" title="statement not covered" >= path.join( ROOT_DIR, 'public</span>' );
+&nbsp;
+	var cssMake = <span class="cstat-no" title="statement not covered" >null,</span>
+		errors =<span class="cstat-no" title="statement not covered" > ''</span>,
+		scheduleBuild =<span class="cstat-no" title="statement not covered" > false</span>,
+		publicCssFiles =<span class="cstat-no" title="statement not covered" > {}</span>; // { path, hash } dictionary
+&nbsp;
+	function <span class="fstat-no" title="function not covered" >spawnMake(</span>) {
+		// If a build is already in progress schedule another build for later
+<span class="cstat-no" title="statement not covered" >		if ( cssMake ) {</span>
+<span class="cstat-no" title="statement not covered" >			scheduleBuild = true;</span>
+<span class="cstat-no" title="statement not covered" >			return;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		io.of( '/css-hot-reload' ).emit( 'css-hot-reload',</span>
+			{ status: 'building' } );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		debug( 'spawning %o', 'npm run build-css' )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake = spawn( 'npm', [ 'run', 'build-css' ], {</span>
+			shell: true,
+			cwd: ROOT_DIR,
+			stdio: [ 'ignore', 'pipe', 'pipe' ]
+		} );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		errors = '';</span>
+<span class="cstat-no" title="statement not covered" >		cssMake.once( 'exit', onexit )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake.stdout.setEncoding( 'utf8' )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake.stderr.setEncoding( 'utf8' )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake.stdout.on( 'data', onstdout )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake.stderr.on( 'data', onstderr )</span>;
+	}
+&nbsp;
+	function <span class="fstat-no" title="function not covered" >onstdout(</span> d ) {
+<span class="cstat-no" title="statement not covered" >		debug( 'stdout %o', d.trim() )</span>;
+	}
+&nbsp;
+	function <span class="fstat-no" title="function not covered" >onstderr(</span> stderr ) {
+<span class="cstat-no" title="statement not covered" >		process.stderr.write( stderr )</span>;
+		// Note:
+		// Because we use make --jobs the error message is usually duplicated.
+<span class="cstat-no" title="statement not covered" >		errors += stderr;</span>
+	}
+&nbsp;
+	/**
+	 * Handle 'make build-css' success or failure
+	 */
+	function <span class="fstat-no" title="function not covered" >onexit(</span> code ) {
+		var changedFiles;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		cssMake.stderr.removeListener( 'data', onstderr )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake.stdout.removeListener( 'data', onstdout )</span>;
+<span class="cstat-no" title="statement not covered" >		cssMake = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if ( scheduleBuild ) {</span>
+			// Handle new css build request
+<span class="cstat-no" title="statement not covered" >			scheduleBuild = false;</span>
+<span class="cstat-no" title="statement not covered" >			spawnMake();</span>
+		} else <span class="cstat-no" title="statement not covered" >if ( 0 === code ) {</span>
+			// 'make build-css' success
+<span class="cstat-no" title="statement not covered" >			changedFiles = updateChangedCssFiles();</span>
+<span class="cstat-no" title="statement not covered" >			if ( 0 !== changedFiles.length ) {</span>
+<span class="cstat-no" title="statement not covered" >				debug( chalk.green( 'css reload' )</span> );
+<span class="cstat-no" title="statement not covered" >				io.of( '/css-hot-reload' ).emit( 'css-hot-reload',</span>
+					{ status: 'reload', changedFiles: changedFiles } );
+			} else {
+<span class="cstat-no" title="statement not covered" >				debug( chalk.green( 'css up to date' )</span> );
+<span class="cstat-no" title="statement not covered" >				io.of( '/css-hot-reload' ).emit( 'css-hot-reload',</span>
+					{ status: 'up-to-date' } );
+			}
+		} else {
+			// 'make build-css' failed
+<span class="cstat-no" title="statement not covered" >			debug( chalk.red( 'css build failed' )</span> );
+<span class="cstat-no" title="statement not covered" >			io.of( '/css-hot-reload' ).emit( 'css-hot-reload',</span>
+				{ status: 'build-failed', error: errors } );
+		}
+	}
+&nbsp;
+	/**
+	 * Updates the MD5 hash of the public CSS files and returns the changed ones
+	 * in a list.
+	 */
+	function <span class="fstat-no" title="function not covered" >updateChangedCssFiles(</span>) {
+		var hash, filePath, changedFiles <span class="cstat-no" title="statement not covered" >= [</span>];
+<span class="cstat-no" title="statement not covered" >		for( filePath in publicCssFiles ) {</span>
+<span class="cstat-no" title="statement not covered" >			hash = md5File.sync( filePath )</span>;
+<span class="cstat-no" title="statement not covered" >			if ( hash !== publicCssFiles[ filePath ] ) {</span>
+<span class="cstat-no" title="statement not covered" >				publicCssFiles[ filePath ] = hash</span>;
+<span class="cstat-no" title="statement not covered" >				changedFiles.push( path.basename( filePath )</span> );
+			}
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return changedFiles;</span>
+	}
+&nbsp;
+	// Initialize publicCssFiles
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	fs.readdirSync( PUBLIC_DIR ).forEac<span class="fstat-no" title="function not covered" >h(</span> function( file ) {</span>
+<span class="cstat-no" title="statement not covered" >		if ( '.css' === file.slice( -4 ) ) {</span>
+			var fullPath = <span class="cstat-no" title="statement not covered" >path.join( PUBLIC_DIR, file </span>);
+<span class="cstat-no" title="statement not covered" >			publicCssFiles[ fullPath ] = md5File.sync( fullPath</span> );
+		}
+	} );
+&nbsp;
+	// Watch .scss files
+&nbsp;
+	var watcher = <span class="cstat-no" title="statement not covered" >chokidar.watch( SCSS_PATHS, {</span>
+		ignored: /^.*\.(js[x]?|md|json|unison\.tmp)$/,
+		usePolling: false,
+		persistent: true
+	} );
+&nbsp;
+	// The add/addDir events are fired during initialization generating an
+	// avalanche of refreshes on the client so we stick to the change events
+	// only for now until we can exclude the initial add/addDir events.
+<span class="cstat-no" title="statement not covered" >	watcher.on( 'all',<span class="fstat-no" title="function not covered" > f</span>unction( event, path ) {</span>
+<span class="cstat-no" title="statement not covered" >		if ( 'change' === event &amp;&amp; path.match( /^.*\.scss$/ ) ) {</span>
+<span class="cstat-no" title="statement not covered" >			spawnMake();</span>
+		}
+	} );
+&nbsp;
+}
+&nbsp;
+/**
+ * Module exports
+ */
+<span class="cstat-no" title="statement not covered" >module.exports = setup;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 16:19:30 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

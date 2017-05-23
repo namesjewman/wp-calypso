@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for bundler/extensions-loader.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">bundler</a> extensions-loader.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require( 'fs' );<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+const path <span class="cstat-no" title="statement not covered" >= require( 'path</span>' );
+const camelCase <span class="cstat-no" title="statement not covered" >= require( 'lodash' ).camelC</span>ase;
+const compact <span class="cstat-no" title="statement not covered" >= require( 'lodash' ).comp</span>act;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getReducerPath(</span> extensionDir ) {
+<span class="cstat-no" title="statement not covered" >	return path.join( 'client', 'extensions', extensionDir, 'state', 'reducer.js' )</span>;
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >generateReducerRequireString(</span> extensionDir ) {
+<span class="cstat-no" title="statement not covered" >	return `'${ camelCase( extensionDir ) }': require( 'extensions/${ extensionDir }/state/reducer' )`;</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >generateExtensionsModuleString(</span> reducerRequires ) {
+<span class="cstat-no" title="statement not covered" >	return `module.exports = {</span>
+		reducers: function() {
+			return {
+				${ reducerRequires.join( ',\n' ) }
+			};
+		}
+	};`;
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getReducersSync(</span> extensionDirs = [] ) {<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >	return extensionDirs</span>
+		.filte<span class="fstat-no" title="function not covered" >r(</span> ( extensionDir ) =&gt; fs<span class="cstat-no" title="statement not covered" >.existsSync( getReducerPath( extensionDir ) ) )</span>
+		.map( generateReducerRequireString );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getExtensionsModuleSync(</span> extensionDirs ) {
+<span class="cstat-no" title="statement not covered" >	return generateExtensionsModuleString( getReducersSync( extensionDirs )</span> );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >pathExists(</span> testPath ) {
+<span class="cstat-no" title="statement not covered" >	return new Promise( ( resolve<span class="fstat-no" title="function not covered" > )</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		fs.access( testPath, fs.constants.F_OK,<span class="fstat-no" title="function not covered" > (</span> err ) =&gt; reso<span class="cstat-no" title="statement not covered" >lve( ! err ) );</span></span>
+	} );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getReducersAsync(</span> extensionDirs = [] ) {<span class="cstat-no" title="statement not covered" ></span>
+	const dirsWithReducers <span class="cstat-no" title="statement not covered" >= Promise.all(</span>
+		extensionDirs.map<span class="fstat-no" title="function not covered" >( </span>( extensionDir ) =&gt;<span class="cstat-no" title="statement not covered" ></span>
+			pathExists( getReducerPath( extensionDir ) )
+				.the<span class="fstat-no" title="function not covered" >n(</span> ( exists ) =&gt; ex<span class="cstat-no" title="statement not covered" >ists &amp;&amp; extensionDir ) )</span>
+	).then( compact );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return dirsWithReducers.then(<span class="fstat-no" title="function not covered" > d</span>irs =&gt;<span class="cstat-no" title="statement not covered" ></span></span>
+		dirs.map( generateReducerRequireString ) );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getExtensionsModuleAsync(</span> extensionDirs ) {
+<span class="cstat-no" title="statement not covered" >	return getReducersAsync( extensionDirs )</span>
+		.then( generateExtensionsModuleString );
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = <span class="fstat-no" title="function not covered" >fu</span>nction( content ) {</span>
+<span class="cstat-no" title="statement not covered" >	this.cacheable &amp;&amp; this.cacheable();</span>
+&nbsp;
+	const extensionDirs <span class="cstat-no" title="statement not covered" >= require( this.resourcePat</span>h );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if ( ! Array.isArray( extensionDirs ) ) {</span>
+<span class="cstat-no" title="statement not covered" >		this.emitError( 'Extensions module is not an array' )</span>;
+<span class="cstat-no" title="statement not covered" >		return content;</span>
+	}
+&nbsp;
+	const callback <span class="cstat-no" title="statement not covered" >= this.async(</span>);
+<span class="cstat-no" title="statement not covered" >	if ( ! callback ) {</span>
+<span class="cstat-no" title="statement not covered" >		return getExtensionsModuleSync( extensionDirs )</span>;
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	getExtensionsModuleAsync( extensionDirs )</span>
+		.the<span class="fstat-no" title="function not covered" >n(</span> ( moduleString ) =&gt; ca<span class="cstat-no" title="statement not covered" >llback( null, moduleString ) )</span>
+		.catc<span class="fstat-no" title="function not covered" >h(</span> ( reason ) =&gt; ca<span class="cstat-no" title="statement not covered" >llback( reason ) );</span>
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 11:20:15 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

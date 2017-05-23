@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for devdocs/bin/generate-proptypes-index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">devdocs/bin</a> generate-proptypes-index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/87</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">#!/usr/bin/env node
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span>
+/**
+ * This file generates an index of proptypes by component displayname, slug and folder name
+ */
+&nbsp;
+const startTime = process.hrtime();
+<span class="cstat-no" title="statement not covered" ></span>
+/**
+ * External Dependencies
+ */
+require( 'babel-register' );
+<span class="cstat-no" title="statement not covered" >const fs = require( 'fs' );</span>
+const pat<span class="cstat-no" title="statement not covered" >h = require( '</span>path' );
+const react<span class="cstat-no" title="statement not covered" >Docgen = require</span>( 'react-docgen' );
+const { getPropert<span class="cstat-no" title="statement not covered" >yName, getMemberValuePat</span>h, resolveToValue } = require( 'react-docgen/dist/utils' );
+<span class="cstat-no" title="statement not covered" >const util = require( 'client/devdo</span>cs/docs-example/ut<span class="cstat-no" title="statement not covered" >il' );<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+const globb<span class="cstat-no" title="statement not covered" >y = require( 'globby' );</span>
+<span class="cstat-no" title="statement not covered" ></span>
+const root = path.dirname( path.join( __dirname, '..', '..' ) );
+const handl<span class="cstat-no" title="statement not covered" >ers = [ ...reactDocgen.defaultHandlers, comment</span>Handler ];
+<span class="cstat-no" title="statement not covered" ></span>
+/**
+ * Replaces **'s in comment blocks and trims comments
+ * @param {string} str The doc string to clean
+ */
+function parseDocblock( str ) {
+	const li<span class="fstat-no" title="function not covered" >nes = str.spli</span>t( '\n' );
+	for ( let i <span class="cstat-no" title="statement not covered" >= 0, l = lines.l</span>ength; i &lt; l; i++ ) {
+<span class="cstat-no" title="statement not covered" >		lines[ i ] = lines[ i ].replace( /^\s*\*\s?/, '' );</span>
+	}<span class="cstat-no" title="statement not covered" ></span>
+	return lines.join( '\n' ).trim();
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+/**
+ * Given a path, this function returns the closest preceding comment, if it exists
+ * @param {NodePath} path The node path from react-docgen
+ */
+function getComments( path ) {
+	let comm<span class="fstat-no" title="function not covered" >ents = [];</span>
+<span class="cstat-no" title="statement not covered" ></span>
+	if ( path.node.leadingComments ) {
+<span class="cstat-no" title="statement not covered" >		// if there are comments before this property node, use the ones leading, not following a previous node</span>
+		comments = path.node.leadingComments.filter(
+<span class="cstat-no" title="statement not covered" >			comment =&gt; comment.leading === true</span>
+<span class="fstat-no" title="function not covered" >		);<span class="cstat-no" title="statement not covered" ></span></span>
+	} else if (path.node.comments) {
+		// if <span class="cstat-no" title="statement not covered" >there are comments after this property node, use the ones following this node</span>
+		comments = path.node.comments.filter(
+<span class="cstat-no" title="statement not covered" >			comment =&gt; comment.leading === false</span>
+<span class="fstat-no" title="function not covered" >		);<span class="cstat-no" title="statement not covered" ></span></span>
+	}
+&nbsp;
+	if ( comments.length &gt; 0 ) {
+<span class="cstat-no" title="statement not covered" >		return parseDocblock( comments[ comments.length - 1 ].value );</span>
+	}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+	return null;
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+/**
+ * Handler for react-docgen to use in order to discover
+ * @param {Documentation} documentation The object to mutate that will eventually be passed back to us from parse()
+ * @param {NodePath} path The node we are handling
+ */
+function commentHandler(documentation, path) {
+	// retri<span class="fstat-no" title="function not covered" >eve the proptyp</span>es for this node, if they exist
+	let propTypesPath = getMemberValuePath(path, 'propTypes');
+	if (!propTypesPath) <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >		return;</span>
+	}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+	// resolve a path to a value, if possible, will be ObjectExpression type if it can
+	propTypesPath = resolveToValue( propTypesPath );
+<span class="cstat-no" title="statement not covered" >	if ( !propTypesPath || propTypesPath.value.type</span> !== 'ObjectExpression' ) {
+<span class="cstat-no" title="statement not covered" >		return;</span>
+	}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+	// Iterate over all the properties in the proptypes object
+	propTypesPath.get( 'properties' ).each( ( propertyPath ) =&gt; {
+<span class="cstat-no" title="statement not covered" >		// ensure that this node is a proper<span class="fstat-no" title="function not covered" >ty</span></span>
+		if ( propertyPath.value.type !== 'Property' ) {
+<span class="cstat-no" title="statement not covered" >			return;</span>
+		}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+		// get the prop name and description, ensuring that it either doesn't exist or is empty before continuing
+		const propName = getPropertyName(propertyPath);
+		const propDescr<span class="cstat-no" title="statement not covered" >iptor = documentation.getPropD</span>escriptor(propName);
+<span class="cstat-no" title="statement not covered" ></span>
+		if ( propDescriptor.description &amp;&amp; propDescriptor.description !== '' ) {
+<span class="cstat-no" title="statement not covered" >			return;</span>
+		}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+		// if we don't have anything, see if there are inline comments for this property
+		propDescriptor.description = getComments( propertyPath ) || '';
+	}<span class="cstat-no" title="statement not covered" > );</span>
+}
+&nbsp;
+/**
+ * Wraps fs.readFile in a Promise
+ * @param {string} filePath The path to of the file to read
+ * @return {string} The file contents
+ */
+const readFile = ( filePath ) =&gt; {
+	return fs.read<span class="cstat-no" title="statement not covered" >FileSync(<span class="fstat-no" title="function not covered" > filePath</span>, { encoding: 'utf8' } );</span>
+}<span class="cstat-no" title="statement not covered" >;</span>
+&nbsp;
+/**
+ * Calculates a filepath's include path and begins reading the file for parsing
+ * Calls back with null, if an error occurs or an object if it succeeds
+ * @param {string} filePath The path to read
+ */
+const processFile = ( filePath ) =&gt; {
+	const filename = <span class="cstat-no" title="statement not covered" >path.base<span class="fstat-no" title="function not covered" >name( filePa</span>th );</span>
+	const includePa<span class="cstat-no" title="statement not covered" >thRegEx = new RegExp(`^c</span>lient/(.*?)/${ filename }$`);
+	const includePathSuffix<span class="cstat-no" title="statement not covered" > = ( filename === 'index.jsx' ? '' : '/' + pat</span>h.basename( filename, '.jsx' ) );
+	const includePath = incl<span class="cstat-no" title="statement not covered" >udePathRegEx.exec( filePath )[1] + includePathSuffix;</span>
+	try {<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		const usePath = path.isAbsolute( filePath ) ? filePath : path.join( process.cwd(), filePath );</span>
+		const document<span class="cstat-no" title="statement not covered" > = readFile( usePath );</span>
+		return {<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >			document,</span>
+			includePath
+		};
+	} catch ( error ) {
+		console.log(`Skipping ${ filePath } due to fs error: ${ error }`);
+	}<span class="cstat-no" title="statement not covered" ></span>
+	return null;
+}<span class="cstat-no" title="statement not covered" >;</span>
+&nbsp;
+/**
+ * Given a processed file object, parses the file for proptypes and calls the callback
+ * Calls back with null on any error, or a parsed object if it succeeds
+ * @param {Object} docObj The processed document object
+ */
+const parseDocument = ( docObj ) =&gt; {
+	try {<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >		const parsed = reactDocgen.parse( docObj.document, undefined, handlers );</span>
+		parsed.includ<span class="cstat-no" title="statement not covered" >ePath = docObj.includePath;</span>
+<span class="cstat-no" title="statement not covered" >		if ( parsed.displayName ) {</span>
+<span class="cstat-no" title="statement not covered" >			parsed.slug = util.camelCaseToSlug( parsed.displayName );</span>
+		}<span class="cstat-no" title="statement not covered" ></span>
+		else {
+			// we have to figure it out -- use the directory name to get the slug
+			parsed.slug = path.basename( docObj.includePath );
+<span class="cstat-no" title="statement not covered" >			parsed.displayName = util.slugToCamelCase( parsed</span>.slug );
+		}<span class="cstat-no" title="statement not covered" ></span>
+		return parsed;
+	}<span class="cstat-no" title="statement not covered" > catch ( error </span>) {
+		// skipping, probably because the file couldn't be parsed for many reasons (there are lots of them!)
+		return null;
+	}<span class="cstat-no" title="statement not covered" ></span>
+};
+&nbsp;
+/**
+ * Creates an index of the files
+ * @param {Array} parsed
+ * @return {{data: Array, index: {displayName: {}, slug: {}, includePath: {}}}}
+ */
+const createIndex = ( parsed ) =&gt; {
+	return parsed.fil<span class="cstat-no" title="statement not covered" >ter( ( co<span class="fstat-no" title="function not covered" >mponent ) =&gt;</span> {</span>
+<span class="cstat-no" title="statement not covered" >		if ( ! component ) {<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >			return false;</span>
+		}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+		const displayName = component.displayName;
+<span class="cstat-no" title="statement not covered" ></span>
+		return ! ( displayName === undefined || displayName === '' );
+	}<span class="cstat-no" title="statement not covered" > );</span>
+};
+&nbsp;
+/**
+ * Write the file
+ * @param {Object} contents The contents of the file
+ */
+const writeFile = ( contents ) =&gt; {
+	fs.writeFileSyn<span class="cstat-no" title="statement not covered" >c( path.j<span class="fstat-no" title="function not covered" >oin( root,</span> 'server/devdocs/proptypes-index.json' ), JSON.stringify( contents ) );</span>
+}<span class="cstat-no" title="statement not covered" >;</span>
+&nbsp;
+const main = ( () =&gt; {
+	console.lo<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >g(</span> 'Building: proptypes-index.json' );</span>
+<span class="cstat-no" title="statement not covered" >	const fileList = globby.sync( process.argv.slic</span>e( 2 ) );
+<span class="cstat-no" title="statement not covered" ></span>
+	if ( fileList.length === 0 ) {
+<span class="cstat-no" title="statement not covered" >		process.stderr.write( 'You must pass a list of files to process' );</span>
+<span class="cstat-no" title="statement not covered" >		process.exit( 1 );</span>
+	}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+	const documents = createIndex(
+		fileList<span class="cstat-no" title="statement not covered" ></span>
+			.map( processFile )
+			.map( parseDocument )
+	);
+	writeFile( documents );
+<span class="cstat-no" title="statement not covered" ></span>
+	const elapsed = process.hrtime( startTime )[ 1 ] / 1000000;
+	console.log( `<span class="cstat-no" title="statement not covered" >Time: ${ process.hrtime( startTime )[0]</span> }s ${ elapsed.toFixed( 3 ) }ms` );
+}<span class="cstat-no" title="statement not covered" > )();</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 11:20:15 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

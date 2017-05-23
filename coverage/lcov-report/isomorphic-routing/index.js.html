@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for isomorphic-routing/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">isomorphic-routing</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span></span></span>
+ * Internal dependencies
+ */
+import { serverRender } from 'render';
+import { setSection as setSectionMiddlewareFactory } from '../../client/controller';
+&nbsp;
+export function serverRouter( expressApp, <span class="cstat-no" title="statement not covered" >setUpRoute, sectio</span>n ) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+	return function( route, ...middlewares ) {
+		if ( middlewares.length === 0 &amp;&amp; typeof route === 'function' &amp;&amp; route.length === 3 ) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span>
+			// No route def -- the route arg is really an error-handling middleware
+			// `page( someMw )` would be a shorthand for `page( '*', someMw )`, even tho the same isn't true
+			// for Express, we want things to be isomorphic, so that should be handled by the `else` branch.
+			// OTOH, if `someMw` takes 3 args `( err, context, next )` instead of the usual 2 `( context, next )`,
+			// it's an error-handling middleware and needs to be handled by this branch.
+<span class="cstat-no" title="statement not covered" >			expressApp.use(</span>
+<span class="fstat-no" title="function not covered" >				(</span> err, req, res, next ) =&gt; {
+<span class="cstat-no" title="statement not covered" >					route( err, req.context, next </span>);
+				},
+				// We need 4 args so Express knows this is an error-handling middleware
+				// TODO: Ideally, there'd be a dedicated serverRenderError middleware in server/render
+<span class="fstat-no" title="function not covered" >				(</span> err, req, res, next ) =&gt; { // eslint-disable-line no-unused-vars
+<span class="cstat-no" title="statement not covered" >					req.error = err;</span>
+<span class="cstat-no" title="statement not covered" >					serverRender( req, res.status( err.status ) );</span>
+				}
+			);
+		} else {
+<span class="cstat-no" title="statement not covered" >			expressApp.get(</span>
+				route,
+				setUpRoute,
+				combineMiddlewares(
+					setSectionMiddlewareFactory( section ),
+					...middlewares
+				),
+				serverRender
+			);
+		}
+	};
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >combineMiddlewares(</span> ..<span class="cstat-no" title="statement not covered" >.middlewares ) {<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >fu</span>nction( req, res, next ) {</span>
+<span class="cstat-no" title="statement not covered" >		req.context = getEnhancedContext( req, res )</span>;
+<span class="cstat-no" title="statement not covered" >		applyMiddlewares( req.context, next, ...middlewares, () =&gt; {<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >			next();</span>
+		} );
+	};
+}
+&nbsp;
+// TODO: Maybe merge into getDefaultContext().
+function <span class="fstat-no" title="function not covered" >getEnhancedContext(</span> req, res ) {
+<span class="cstat-no" title="statement not covered" >	return Object.assign( {}, req.context, {</span>
+		isLoggedIn: req.cookies.wordpress_logged_in,
+		isServerSide: true,
+		originalUrl: req.originalUrl,
+		path: req.url,
+		pathname: req.path,
+		params: req.params,
+		query: req.query,
+		protocol: req.protocol,
+		host: req.headers.host,
+		res
+	} );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >applyMiddlewares(</span> context, expressNext, <span class="cstat-no" title="statement not covered" >...middlewares ) {<span class="cstat-no" title="statement not covered" ></span></span>
+	const liftedMiddlewares <span class="cstat-no" title="statement not covered" >= middlewares.ma<span class="fstat-no" title="function not covered" >p(</span> middleware =&gt; next =<span class="cstat-no" title="statement not covered" >&gt; middl<span class="fstat-no" title="function not covered" >ew</span>are( context, (<span class="cstat-no" title="statement not covered" > err ) =&gt; {<span class="fstat-no" title="function not covered" ></span></span></span></span>
+		if<span class="cstat-no" title="statement not covered" > ( err ) {</span>
+			ex<span class="cstat-no" title="statement not covered" >pressNext( err ); </span>// Call express' next( err ) for error handling (and bail early from this route)
+		} else {
+			ne<span class="cstat-no" title="statement not covered" >xt();</span>
+		}
+	} ) );
+<span class="cstat-no" title="statement not covered" >	compose( ...liftedMiddlewares )();</span>
+}
+function <span class="fstat-no" title="function not covered" >compose(</span> ..<span class="cstat-no" title="statement not covered" >.functions ) {<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >	return functions.reduceRight(<span class="fstat-no" title="function not covered" > (</span> composed, f ) =&gt; (<span class="cstat-no" title="statement not covered" ></span></span>
+		(<span class="fstat-no" title="function not covered" >) </span>=&gt; f( compo<span class="cstat-no" title="statement not covered" >sed )</span>
+<span class="fstat-no" title="function not covered" >	),</span> () =&gt; {} );
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 11:20:15 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

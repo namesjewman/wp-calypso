@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/bundler/webpack/stable-build-plugin.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">server/bundler/webpack</a> stable-build-plugin.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const crypto = require( 'c<span class="cstat-no" title="statement not covered" >rypto' );</span>
+&nbsp;
+const md5Cache <span class="cstat-no" title="statement not covered" >= {</span>};
+&nbsp;
+function <span class="fstat-no" title="function not covered" >md5(</span> content ) {
+<span class="cstat-no" title="statement not covered" >	if ( ! md5Cache[ content ] ) {</span>
+<span class="cstat-no" title="statement not covered" >		md5Cache[ content ] = crypto.createHash( 'md5' ).update( content, 'utf-8' ).digest( '</span>hex' );
+	}
+<span class="cstat-no" title="statement not covered" >	return md5Cache[ content ]</span>;
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >hashToId(</span> hash, seed, hashSize ) {
+	// Generate a unsigned integer sized &lt;hashSize&gt; bits using a part of the MD5
+	// hash. Seed is a number 0..31 and the hash is expected to be 32 chars
+	// (nibbles) long.
+&nbsp;
+	// double the hash to allow overflow
+<span class="cstat-no" title="statement not covered" >	hash = hash + hash;</span>
+&nbsp;
+	// get lower and upper 28 bits
+	const lsb <span class="cstat-no" title="statement not covered" >= parseInt( hash.substr( seed, 7 ),</span> 16 );
+	const msb <span class="cstat-no" title="statement not covered" >= parseInt( hash.substr( seed + 7, 7 ),</span> 16 );
+&nbsp;
+	// combine them to get the ID
+	// NOTE: Logical operators only work up to 31 bits (because values will be
+	// casted to 32bit signed integer), so we use classic arithmetic!
+	const lsbBits <span class="cstat-no" title="statement not covered" >= Math.min( 28, hashSiz</span>e );
+	const msbBits <span class="cstat-no" title="statement not covered" >= Math.max( 0, hashSize - 2</span>8 );
+	const lsbMask <span class="cstat-no" title="statement not covered" >= Math.pow( 2, lsbBits ) </span>- 1;
+	const msbMask <span class="cstat-no" title="statement not covered" >= Math.pow( 2, msbBits ) </span>- 1;
+<span class="cstat-no" title="statement not covered" >	return ( lsb &amp; lsbMask ) + ( ( msb &amp; msbMask ) * Math.pow( 2</span>, 28 ) );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >sortById(</span> a, b ) {
+<span class="cstat-no" title="statement not covered" >	return a &gt; b ? 1 : a &lt; b ? -1 : 0; </span>//eslint-disable-line no-nested-ternary
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getModuleSource(</span> module ) {
+<span class="cstat-no" title="statement not covered" >	return {</span>
+		id: module.id,
+		source: ( module._source || {} )._value || '',
+		dependencies: ( module.dependencies || [] ).ma<span class="fstat-no" title="function not covered" >p(</span> function( d ) {
+<span class="cstat-no" title="statement not covered" >			return d.module ? d.module.id : '';</span>
+		} )
+	};
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >concatenateSource(</span> result, module ) {
+<span class="cstat-no" title="statement not covered" >	return result + '#' + module.id + ':' + module.source + '$' + ( module.dependencies.join( ','</span> ) );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >WebpackStableBuildPlugin(</span> options ) {
+<span class="cstat-no" title="statement not covered" >	this.options = options || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.algorithm = options.algorithm || 'md5';</span>
+<span class="cstat-no" title="statement not covered" >	this.digest = options.digest || 'hex';</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >WebpackStableBuildPlugin.prototype.apply = <span class="fstat-no" title="function not covered" >fu</span>nction( compiler ) {</span>
+	const usedChunkIds <span class="cstat-no" title="statement not covered" >= {</span>};
+	const usedModuleIds <span class="cstat-no" title="statement not covered" >= {</span>};
+	const context <span class="cstat-no" title="statement not covered" >= compiler.options.contex</span>t;
+	const seed <span class="cstat-no" title="statement not covered" >= ( +this.options.seed || 0 ) %</span> 32;
+	const hashSize <span class="cstat-no" title="statement not covered" >= ( +this.options.hashSize ||</span> 53 );
+	const _plugin <span class="cstat-no" title="statement not covered" >= thi</span>s;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if ( hashSize &gt; 53 ) {</span>
+		// In JavaScript, only integers up to 2^53 (exclusive) can be considered
+		// safe, see http://www.2ality.com/2013/10/safe-integers.html
+<span class="cstat-no" title="statement not covered" >		throw new Error( 'hashSize too large' )</span>;
+	}
+&nbsp;
+	function <span class="fstat-no" title="function not covered" >genChunkId(</span> chunkName ) {
+		const hash <span class="cstat-no" title="statement not covered" >= md5( chunkNam</span>e );
+		// generate a 28 bit integer using a part of the MD5 hash
+		const id <span class="cstat-no" title="statement not covered" >= hashToId( hash, seed, hashSiz</span>e );
+<span class="cstat-no" title="statement not covered" >		if ( usedChunkIds.hasOwnProperty( id ) &amp;&amp; usedChunkIds[ id ] !== chunkName ) {</span>
+<span class="cstat-no" title="statement not covered" >			throw new Error( 'chunk id collision' )</span>;
+		}
+<span class="cstat-no" title="statement not covered" >		return id;</span>
+	}
+&nbsp;
+	function <span class="fstat-no" title="function not covered" >genModuleId(</span> modulePath ) {
+		const hash <span class="cstat-no" title="statement not covered" >= md5( modulePat</span>h );
+		// generate a 28 bit integer using a part of the MD5 hash
+		const id <span class="cstat-no" title="statement not covered" >= hashToId( hash, seed, hashSiz</span>e );
+<span class="cstat-no" title="statement not covered" >		if ( usedModuleIds.hasOwnProperty( id ) &amp;&amp; usedModuleIds[ id ] !== modulePath ) {</span>
+<span class="cstat-no" title="statement not covered" >			throw new Error( 'module id collision' )</span>;
+		}
+<span class="cstat-no" title="statement not covered" >		return id;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	compiler.plugin( 'compilation',<span class="fstat-no" title="function not covered" > f</span>unction( compilation ) {</span>
+<span class="cstat-no" title="statement not covered" >		compilation.plugin( 'before-chunk-ids',<span class="fstat-no" title="function not covered" > f</span>unction( chunks ) {</span>
+<span class="cstat-no" title="statement not covered" >			chunks.forEach(<span class="fstat-no" title="function not covered" > f</span>unction( chunk ) {</span>
+				const chunkName <span class="cstat-no" title="statement not covered" >= chunk.nam</span>e;
+<span class="cstat-no" title="statement not covered" >				if ( ! chunkName ) {</span>
+<span class="cstat-no" title="statement not covered" >					return;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				chunk.id = genChunkId( chunkName )</span>;
+<span class="cstat-no" title="statement not covered" >				usedChunkIds[ chunk.id ] = chunkName</span>;
+			} );
+		} );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		compilation.plugin( 'before-module-ids',<span class="fstat-no" title="function not covered" > f</span>unction( modules ) {</span>
+<span class="cstat-no" title="statement not covered" >			modules.forEach(<span class="fstat-no" title="function not covered" > f</span>unction( module ) {</span>
+<span class="cstat-no" title="statement not covered" >				if ( module.libIdent &amp;&amp; module.id === null ) {</span>
+					const modulePath <span class="cstat-no" title="statement not covered" >= module.libIdent( {</span>
+						context: context
+					} );
+<span class="cstat-no" title="statement not covered" >					module.id = genModuleId( modulePath )</span>;
+<span class="cstat-no" title="statement not covered" >					usedModuleIds[ module.id ] = modulePath</span>;
+				}
+			} );
+		} );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		compilation.plugin( 'chunk-hash',<span class="fstat-no" title="function not covered" > f</span>unction( chunk, chunkHash ) {</span>
+			const source <span class="cstat-no" title="statement not covered" >= chunk.modules.map( getModuleSource ).sort( sortById ).reduce( concatenateSourc</span>e, '' );
+			const hash <span class="cstat-no" title="statement not covered" >= crypto.createHash( _plugin.algorithm ).update( sou</span>rce );
+			// have to include the seed to get different hashes for different seeds
+<span class="cstat-no" title="statement not covered" >			hash.update( seed.toString( 16 )</span> );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			chunkHash.digest = <span class="fstat-no" title="function not covered" >fu</span>nction( digest ) {</span>
+<span class="cstat-no" title="statement not covered" >				return hash.digest( digest || _plugin.digest )</span>;
+			};
+		} );
+	} );
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = WebpackStableBuildPlugin;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 16:19:30 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/config/validate-config-keys.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">server/config</a> validate-config-keys.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span>
+ * External dependencies
+ */
+const chalk <span class="cstat-no" title="statement not covered" >= require( 'chalk</span>' );
+const fs <span class="cstat-no" title="statement not covered" >= require( 'fs</span>' );
+const path <span class="cstat-no" title="statement not covered" >= require( 'path</span>' );
+&nbsp;
+/** @type {String} path to configuration file directory */
+const configRoot <span class="cstat-no" title="statement not covered" >= path.resolve( __dirname, '../../', 'config</span>' );
+&nbsp;
+/**
+ * Reads a config file given its basename
+ *
+ * @param {String} filename basename of config file to read, e.g. 'development.json'
+ * @returns {String} contents of file
+ */
+const readConfigFile <span class="cstat-no" title="statement not covered" >= filenam<span class="fstat-no" title="function not covered" >e =&gt; fs.readFil</span>eSync( path<span class="cstat-no" title="statement not covered" >.join( configRoot, filename ), { encoding: 'utf8' } );</span></span>
+&nbsp;
+/**
+ * Reads and parses the data from a
+ * config file given its basename
+ *
+ * @throws SyntaxError if contents of config file not valid JSON
+ * @param {String} filename basename of config file to read, e.g. 'development.json'
+ * @returns {*} parsed data from config file contents
+ */
+const parseConfig <span class="cstat-no" title="statement not covered" >= filenam<span class="fstat-no" title="function not covered" >e =&gt; JSON.pa</span>rse( readCo<span class="cstat-no" title="statement not covered" >nfigFile( filename ) );</span></span>
+&nbsp;
+/** @type {Array} list of [ filename, config data keys ] configuration pairs */
+const environmentKeys <span class="cstat-no" title="statement not covered" >= fs</span>
+	.readdirSync( configRoot, { encoding: 'utf8' } )
+	.filte<span class="fstat-no" title="function not covered" >r(</span> filename =&gt; /\.jso<span class="cstat-no" title="statement not covered" >n$/.test( path.basename( filename ) ) ) // only th</span>e JSON config files
+	.filter(<span class="fstat-no" title="function not covered" > f</span>ilename =&gt; '_shared<span class="cstat-no" title="statement not covered" >.json' !== filename ) // base config</span> for all environments
+	.filter(<span class="fstat-no" title="function not covered" > f</span>ilename =&gt; 'client.<span class="cstat-no" title="statement not covered" >json' !== filename ) // whitelist o</span>f keys allowed in client
+	.filter(<span class="fstat-no" title="function not covered" > f</span>ilename =&gt; ! ( /sec<span class="cstat-no" title="statement not covered" >rets/g ).test( filename ) ) // secr</span>et tokens not part of this system
+	.map(<span class="fstat-no" title="function not covered" > f</span>ilename =&gt; [ filena<span class="cstat-no" title="statement not covered" >me, Object.keys( parseConfig( filename ) ) ] );</span>
+&nbsp;
+/** @type {Object} config data in the shared config file (defaults) */
+const sharedConfig <span class="cstat-no" title="statement not covered" >= parseConfig( '_shared.json</span>' );
+&nbsp;
+/**
+ * Iterate over all of the keys in each configuration file
+ * and check if that key is also present in the shared file.
+ * If a key is missing from the shared file (meaning that
+ * there is no default value) then we want to flag it as
+ * invalid. Such a missing value could and likely would
+ * cause runtime errors in Calypso
+ */
+<span class="cstat-no" title="statement not covered" >environmentKeys.forEach(<span class="fstat-no" title="function not covered" > (</span> [ filename, keys ] ) =&gt; {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+	k<span class="cstat-no" title="statement not covered" >eys.forEach( <span class="fstat-no" title="function not covered" >ke</span>y =&gt; {</span>
+		if<span class="cstat-no" title="statement not covered" > ( ! sharedConfig.hasOwnProperty( key ) ) {</span>
+			con<span class="cstat-no" title="statement not covered" >sole.error(</span>
+				`${ chalk.red( 'Configuration Error' ) }\n` +
+				`Key ${ chalk.blue( key ) } defined in ${ chalk.blue( filename ) } ` +
+				`but not in ${ chalk.blue( '_shared.json' ) }\n` +
+				`Please add a default value in ${ chalk.blue( '_shared.json' ) } ` +
+				`before adding overrides in the environment-specific config files.`
+			);
+&nbsp;
+			pro<span class="cstat-no" title="statement not covered" >cess.exit( 1 ); /</span>/eslint-disable-line
+		}
+	} );
+} );
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 16:19:30 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

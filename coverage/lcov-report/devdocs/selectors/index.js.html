@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for devdocs/selectors/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">devdocs/selectors</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span>
+ * External dependencies
+ */
+const fs <span class="cstat-no" title="statement not covered" >= require( 'fs</span>' );
+const path <span class="cstat-no" title="statement not covered" >= require( 'path</span>' );
+const express <span class="cstat-no" title="statement not covered" >= require( 'express</span>' );
+const Fuse <span class="cstat-no" title="statement not covered" >= require( 'fuse.js</span>' );
+const doctrine <span class="cstat-no" title="statement not covered" >= require( 'doctrine</span>' );
+const camelCase <span class="cstat-no" title="statement not covered" >= require( 'lodash/camelCase</span>' );
+const forEach <span class="cstat-no" title="statement not covered" >= require( 'lodash/forEach</span>' );
+&nbsp;
+/**
+ * Constants
+ */
+&nbsp;
+const REGEXP_DOCBLOCKS <span class="cstat-no" title="statement not covered" >= /\/\*\* *\n( *\*.*\n)* *\*\//</span>g;
+const SELECTORS_DIR <span class="cstat-no" title="statement not covered" >= path.resolve( __dirname, '../../../client/state/selectors</span>' );
+&nbsp;
+/**
+ * Module variables
+ */
+&nbsp;
+const router <span class="cstat-no" title="statement not covered" >= express.Router(</span>);
+let prepareFuse;<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >parseSelectorFile(</span> file ) {
+<span class="cstat-no" title="statement not covered" >	return new Promise( ( resolve<span class="fstat-no" title="function not covered" >, </span>reject ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		fs.readFile( path.join( SELECTORS_DIR, file ), 'utf8<span class="fstat-no" title="function not covered" >',</span> ( error, contents ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			if ( error ) {</span>
+<span class="cstat-no" title="statement not covered" >				return reject( error )</span>;
+			}
+&nbsp;
+			const selector <span class="cstat-no" title="statement not covered" >= {</span>
+				name: camelCase( path.basename( file, '.js' ) )
+			};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			forEach( contents.match( REGEXP_DOCBLOCKS <span class="fstat-no" title="function not covered" >),</span> ( docblock ) =&gt; {</span>
+				const doc <span class="cstat-no" title="statement not covered" >= doctrine.parse( docblock, { unwrap: true </span>} );
+<span class="cstat-no" title="statement not covered" >				if ( doc.tags.length &gt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >					Object.assign( selector, doc );</span>
+<span class="cstat-no" title="statement not covered" >					return false;</span>
+				}
+			} );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			resolve( selector )</span>;
+		} );
+	} );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >prime(</span>) {
+<span class="cstat-no" title="statement not covered" >	if ( prepareFuse ) {</span>
+<span class="cstat-no" title="statement not covered" >		return;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	prepareFuse = new Promise( ( resolve<span class="fstat-no" title="function not covered" > )</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		fs.readdir( SELECTORS_DIR,<span class="fstat-no" title="function not covered" > (</span> error, files ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			if ( error ) {</span>
+<span class="cstat-no" title="statement not covered" >				files = [];</span>
+			}
+&nbsp;
+			// Omit index, system files, and subdirectories
+<span class="cstat-no" title="statement not covered" >			files = files.filter(<span class="fstat-no" title="function not covered" > (</span> file ) =&gt; 'ind<span class="cstat-no" title="statement not covered" >ex.js' !== file &amp;&amp; /\.js$/.test( file ) );</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			Promise.all( files.map( parseSelectorFile ) ).then( ( sel<span class="fstat-no" title="function not covered" >ec</span>tors ) =&gt; {</span>
+				// Sort selectors by name alphabetically
+<span class="cstat-no" title="statement not covered" >				selectors.sort(<span class="fstat-no" title="function not covered" > (</span> a, b ) =&gt; a.na<span class="cstat-no" title="statement not covered" >me &gt; b.name );</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				resolve( new Fuse( selectors, {</span>
+					keys: [ {
+						name: 'name',
+						weight: 0.9
+					}, {
+						name: 'description',
+						weight: 0.1
+					} ],
+					threshold: 0.4,
+					distance: 20
+				} ) );
+			} );
+		} );
+	} ).then<span class="fstat-no" title="function not covered" >( </span>( fuse ) =&gt; {
+<span class="cstat-no" title="statement not covered" >		prepareFuse = Promise.resolve( fuse );</span>
+<span class="cstat-no" title="statement not covered" >		return fuse;</span>
+	} );
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >router.get( '/',<span class="fstat-no" title="function not covered" > (</span> request, response ) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >	prepareFuse.then(<span class="fstat-no" title="function not covered" > (</span> fuse ) =&gt; {</span>
+		let results;<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		if ( request.query.search ) {</span>
+<span class="cstat-no" title="statement not covered" >			results = fuse.search( request.query.search )</span>;
+		} else {
+<span class="cstat-no" title="statement not covered" >			results = fuse.list;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		response.json( results )</span>;
+	} ).catch<span class="fstat-no" title="function not covered" >( </span>( error ) =&gt; {
+<span class="cstat-no" title="statement not covered" >		response.status( 500 ).json( error</span> );
+	} );
+} );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports.prime = prime;</span>
+<span class="cstat-no" title="statement not covered" >module.exports.router = router;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 14 2017 11:20:15 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
