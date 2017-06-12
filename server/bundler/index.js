@@ -84,7 +84,7 @@ function middleware( app ) {
 			hash: true,
 			version: false,
 			timings: true,
-			assets: true,
+			assets: false,
 			chunks: true,
 			chunkModules: false,
 			modules: false,
