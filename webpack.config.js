@@ -14,6 +14,7 @@ const cacheIdentifier = require( './server/bundler/babel/babel-loader-cache-iden
 const ChunkFileNamePlugin = require( './server/bundler/plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HardSourceWebpackPlugin = require( 'hard-source-webpack-plugin' );
+const DashboardPlugin = require( 'webpack-dashboard/plugin' );
 
 /**
  * Internal variables
@@ -87,6 +88,7 @@ const webpackConfig = {
 		fs: 'empty'
 	},
 	plugins: [
+		new DashboardPlugin(),
 		new webpack.DefinePlugin( {
 			'process.env': {
 				NODE_ENV: JSON.stringify( bundleEnv )
@@ -169,8 +171,6 @@ const jsRules = {
 };
 
 if ( calypsoEnv === 'development' ) {
-	const DashboardPlugin = require( 'webpack-dashboard/plugin' );
-	webpackConfig.plugins.splice( 0, 0, new DashboardPlugin() );
 	webpackConfig.plugins.push( new webpack.HotModuleReplacementPlugin() );
 	webpackConfig.plugins.push( new webpack.LoaderOptionsPlugin( { debug: true } ) );
 	webpackConfig.entry.build = [

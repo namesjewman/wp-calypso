@@ -140,6 +140,7 @@
     "valid-url": "1.0.9",
     "walk": "2.3.4",
     "webpack": "2.3.2",
+    "webpack-dashboard": "0.2.1",
     "webpack-dev-middleware": "1.9.0",
     "webpack-hot-middleware": "2.15.0",
     "wpcom": "5.4.0",
@@ -255,8 +256,7 @@
     "socket.io": "1.4.5",
     "stylelint": "6.9.0",
     "supertest": "2.0.0",
-    "webpack-bundle-analyzer": "2.8.2",
-    "webpack-dashboard": "1.0.0-2"
+    "webpack-bundle-analyzer": "2.8.2"
   },
   "optionalDependencies": {
     "fsevents": "1.1.1"
