@@ -340,7 +340,7 @@ class ActivityLog extends Component {
 			( daily_logs, timestamp ) => (
 				<ActivityLogDay
 					key={ timestamp }
-					timestamp={ '1497391200000' }
+					timestamp={ timestamp }
 					logs={ daily_logs }
 					siteId={ siteId }
 					isRewindEnabled={ true }

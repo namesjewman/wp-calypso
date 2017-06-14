@@ -13,12 +13,14 @@ import {
 	activityLogError,
 	activityLogUpdate,
 } from 'state/activity-log/actions';
+// import addQueryArgs from 'lib/route/add-query-args';
 
 const activityLogRequest = ( { dispatch }, action ) => {
 	dispatch( http( {
 		apiVersion: '1',
 		method: 'GET',
 		path: `/sites/${ action.siteId }/activity`,
+		// path: addQueryArgs( { number: 1000 }, `/sites/${ action.siteId }/activity` ),
 	}, action ) );
 };
 
