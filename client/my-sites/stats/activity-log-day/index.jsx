@@ -112,7 +112,7 @@ class ActivityLogDay extends Component {
 							status={ log.status }
 							className={ log.className }
 						/>
-					) ) } ) }
+					) ) }
 				</FoldableCard>
 				<ActivityLogConfirmDialog
 					isVisible={ this.state.isRestoreConfirmDialogOpen }
