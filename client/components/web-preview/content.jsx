@@ -213,7 +213,7 @@ export class WebPreviewContent extends Component {
 				/>
 				<div className="web-preview__placeholder">
 					{ this.props.showPreview && ! this.state.loaded && 'seo' !== this.state.device &&
-						<div>
+						<div className="web-preview__loading-message-wrapper">
 							<Spinner />
 							{ this.props.loadingMessage &&
 								<span className="web-preview__loading-message">
@@ -276,7 +276,7 @@ WebPreviewContent.propTypes = {
 	// Called when the preview is closed, either via the 'X' button or the escape key
 	onClose: PropTypes.func,
 	// Optional loading message to display during loading
-	loadingMessage: PropTypes.string,
+	loadingMessage: PropTypes.oneOfType( [ PropTypes.array, PropTypes.string ] ),
 	// The iframe's title element, used for accessibility purposes
 	iframeTitle: PropTypes.string,
 	// Makes room for a sidebar if desired
