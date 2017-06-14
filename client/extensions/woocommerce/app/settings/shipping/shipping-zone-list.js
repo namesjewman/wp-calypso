@@ -24,7 +24,7 @@ import { getSelectedSiteId } from 'state/ui/selectors';
 class ShippingZoneList extends Component {
 	componentWillMount() {
 		if ( this.props.siteId ) {
-			this.props.fetchShippingZones( this.props.siteId );
+			this.props.actions.fetchShippingZones( this.props.siteId );
 		}
 	}
 
@@ -33,7 +33,7 @@ class ShippingZoneList extends Component {
 			return;
 		}
 
-		this.props.fetchShippingZones( siteId );
+		this.props.actions.fetchShippingZones( siteId );
 	}
 
 	renderContent() {
@@ -65,9 +65,9 @@ class ShippingZoneList extends Component {
 	}
 
 	render() {
-		const { siteId, loaded, translate } = this.props;
+		const { siteId, loaded, actions, translate } = this.props;
 
-		const onAddZoneClick = () => ( this.props.addNewShippingZone( siteId ) );
+		const onAddZoneClick = () => ( actions.addNewShippingZone( siteId ) );
 
 		return (
 			<div>
@@ -91,10 +91,10 @@ export default connect(
 		shippingZones: getShippingZones( state ),
 		loaded: areShippingZonesLoaded( state )
 	} ),
-	( dispatch ) => (
-		bindActionCreators( {
+	( dispatch ) => ( {
+		actions: bindActionCreators( {
 			fetchShippingZones,
 			addNewShippingZone
 		}, dispatch )
-	)
+	} )
 )( localize( ShippingZoneList ) );

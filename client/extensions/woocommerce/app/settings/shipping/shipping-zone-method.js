@@ -10,46 +10,88 @@ import { localize } from 'i18n-calypso';
 /**
  * Internal dependencies
  */
+import FlatRate from './shipping-methods/flat-rate';
+import FormFieldSet from 'components/forms/form-fieldset';
+import FormLabel from 'components/forms/form-label';
 import FormTextInput from 'components/forms/form-text-input';
 import FormToggle from 'components/forms/form-toggle';
 import FormSelect from 'components/forms/form-select';
+import FreeShipping from './shipping-methods/free-shipping';
+import LocalPickup from './shipping-methods/local-pickup';
 import { getNewMethodTypeOptions } from 'woocommerce/state/ui/shipping/zones/methods/selectors';
 import {
 	changeShippingZoneMethodTitle,
 	changeShippingZoneMethodType
 } from 'woocommerce/state/ui/shipping/zones/methods/actions';
 
-const ShippingZoneMethod = ( { siteId, id, enabled, methodType, newMethodTypeOptions, title, translate, ...props } ) => {
-	const methodNames = {
-		flat_rate: translate( 'Flat Rate' ),
-		free_shipping: translate( 'Free Shipping' ),
-		local_pickup: translate( 'Local Pickup' )
+const ShippingZoneMethod = ( { siteId, id, enabled, methodType, newMethodTypeOptions, title, translate, actions, ...props } ) => {
+	const renderMethodSettings = () => {
+		switch ( methodType ) {
+			case 'flat_rate':
+				return <FlatRate id={ id } siteId={ siteId } { ...props } />;
+			case 'free_shipping':
+				return <FreeShipping id={ id } siteId={ siteId } { ...props } />;
+			case 'local_pickup':
+				return <LocalPickup id={ id } siteId={ siteId } { ...props } />;
+			default:
+				return null;
+		}
+	};
+
+	const getMethodName = ( type ) => {
+		switch ( type ) {
+			case 'flat_rate':
+				return translate( 'Flat Rate' );
+			case 'free_shipping':
+				return translate( 'Free Shipping' );
+			case 'local_pickup':
+				return translate( 'Local Pickup' );
+			default:
+				return translate( 'Unknown shipping method' );
+		}
 	};
 
 	const renderMethodTypeOptions = () => {
 		const options = newMethodTypeOptions.map( ( newMethodId, index ) => (
-			<option value={ newMethodId } key={ index }>{ methodNames[ newMethodId ] }</option>
+			<option value={ newMethodId } key={ index }>{ getMethodName( newMethodId ) }</option>
 		) );
 
 		if ( ! includes( newMethodTypeOptions, methodType ) ) {
-			options.unshift( <option value={ methodType } key={ -1 }>{ methodNames[ methodType ] }</option> );
+			options.unshift( <option value={ methodType } key={ -1 }>{ getMethodName( methodType ) }</option> );
 		}
 
 		return options;
 	};
 
-	const onMethodTitleChange = ( event ) => ( props.changeShippingZoneMethodTitle( siteId, id, event.target.value ) );
-	const onMethodTypeChange = ( event ) => ( props.changeShippingZoneMethodType( siteId, id, event.target.value ) );
+	const onMethodTitleChange = ( event ) => ( actions.changeShippingZoneMethodTitle( siteId, id, event.target.value ) );
+	const onMethodTypeChange = ( event ) => ( actions.changeShippingZoneMethodType( siteId, id, event.target.value ) );
 
 	return (
-		<div>
-			<FormTextInput value={ title || '' } onChange={ onMethodTitleChange } />
-			<FormToggle checked={ enabled } />
-			<FormSelect
-				value={ methodType }
-				onChange={ onMethodTypeChange }>
-				{ renderMethodTypeOptions() }
-			</FormSelect>
+		<div className="shipping__method-container">
+			<FormFieldSet>
+				<FormSelect
+					value={ methodType }
+					onChange={ onMethodTypeChange }>
+					{ renderMethodTypeOptions() }
+				</FormSelect>
+			</FormFieldSet>
+			<FormFieldSet>
+				<FormLabel>{ translate( 'Title:' ) }</FormLabel>
+				<FormTextInput
+					placeholder={ translate( 'Title' ) }
+					value={ title || '' }
+					onChange={ onMethodTitleChange } />
+			</FormFieldSet>
+			<FormFieldSet>
+				<FormLabel>
+					{ translate( 'Enabled: {{toggle/}}', {
+						components: {
+							toggle: <FormToggle checked={ enabled } />
+						}
+					} ) }
+				</FormLabel>
+			</FormFieldSet>
+			{ renderMethodSettings() }
 		</div>
 	);
 };
@@ -68,8 +110,10 @@ export default connect(
 	( state ) => ( {
 		newMethodTypeOptions: getNewMethodTypeOptions( state )
 	} ),
-	( dispatch ) => ( bindActionCreators( {
-		changeShippingZoneMethodTitle,
-		changeShippingZoneMethodType
-	}, dispatch ) )
+	( dispatch ) => ( {
+		actions: bindActionCreators( {
+			changeShippingZoneMethodTitle,
+			changeShippingZoneMethodType
+		}, dispatch )
+	} )
 )( localize( ShippingZoneMethod ) );

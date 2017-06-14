@@ -17,7 +17,7 @@ import { areShippingZoneMethodsLoaded } from 'woocommerce/state/sites/shipping-z
 import { getShippingZoneMethods } from 'woocommerce/state/ui/shipping/zones/methods/selectors';
 import { openShippingZoneForEdit } from 'woocommerce/state/ui/shipping/zones/actions';
 
-const ShippingZone = ( { translate, id, name, methods, methodsLoaded, siteId, ...props } ) => {
+const ShippingZone = ( { translate, id, name, methods, methodsLoaded, siteId, actions } ) => {
 	const loaded = methodsLoaded || ! isNumber( id );
 
 	const renderMethod = ( methodKey ) => {
@@ -31,7 +31,7 @@ const ShippingZone = ( { translate, id, name, methods, methodsLoaded, siteId, ..
 		);
 	};
 
-	const onEditClick = () => ( props.openShippingZoneForEdit( siteId, id ) );
+	const onEditClick = () => ( actions.openShippingZoneForEdit( siteId, id ) );
 
 	const renderDetails = () => {
 		if ( ! loaded ) {
@@ -83,9 +83,11 @@ export default connect(
 		methods: getShippingZoneMethods( state, ownProps.id ),
 		methodsLoaded: areShippingZoneMethodsLoaded( state, ownProps.id )
 	} ),
-	( dispatch ) => (
-		bindActionCreators( {
-			openShippingZoneForEdit
-		}, dispatch )
-	)
+	( dispatch ) => ( {
+		actions: bindActionCreators(
+			{
+				openShippingZoneForEdit
+			}, dispatch
+		)
+	} )
 )( localize( ShippingZone ) );

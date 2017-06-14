@@ -42,14 +42,14 @@ class ShippingZoneDialog extends Component {
 	}
 
 	render() {
-		const { zone, methods, siteId, translate, newMethodTypeOptions, isVisible } = this.props;
+		const { zone, methods, siteId, translate, newMethodTypeOptions, isVisible, actions } = this.props;
 		const { id, name } = zone || {};
 		const isEditing = isNumber( id );
 
-		const onCancel = () => ( this.props.cancelEditingShippingZone( siteId ) );
-		const onClose = () => ( this.props.closeEditingShippingZone( siteId ) );
-		const onNameChange = ( event ) => ( this.props.changeShippingZoneName( siteId, event.target.value ) );
-		const addMethod = () => ( this.props.addMethodToShippingZone( siteId, newMethodTypeOptions[ 0 ] ) );
+		const onCancel = () => ( actions.cancelEditingShippingZone( siteId ) );
+		const onClose = () => ( actions.closeEditingShippingZone( siteId ) );
+		const onNameChange = ( event ) => ( actions.changeShippingZoneName( siteId, event.target.value ) );
+		const addMethod = () => ( actions.addMethodToShippingZone( siteId, newMethodTypeOptions[ 0 ] ) );
 
 		const onLocationChange = ( location ) => {
 			this.setState( { location } );
@@ -72,7 +72,9 @@ class ShippingZoneDialog extends Component {
 				isVisible={ isVisible }
 				buttons={ buttons }
 				onClose={ onCancel } >
-				<div className="shipping__zone-dialog-header">{ translate( 'Add new shipping zone' ) }</div>
+				<div className="shipping__zone-dialog-header">
+					{ isEditing ? translate( 'Add new shipping zone' ) : translate( 'Edit a shipping zone' ) }
+				</div>
 				<FormFieldSet>
 					<FormLabel htmlFor="zone-name">{ translate( 'Shipping zone name' ) }</FormLabel>
 					<FormTextInput
@@ -110,10 +112,12 @@ export default connect(
 		zone: getCurrentlyEditingShippingZone( state ),
 		methods: getCurrentlyEditingShippingZoneMethods( state )
 	} ),
-	( dispatch ) => ( bindActionCreators( {
-		addMethodToShippingZone,
-		changeShippingZoneName,
-		closeEditingShippingZone,
-		cancelEditingShippingZone
-	}, dispatch ) )
+	( dispatch ) => ( {
+		actions: bindActionCreators( {
+			addMethodToShippingZone,
+			changeShippingZoneName,
+			closeEditingShippingZone,
+			cancelEditingShippingZone
+		}, dispatch )
+	} )
 )( localize( ShippingZoneDialog ) );
