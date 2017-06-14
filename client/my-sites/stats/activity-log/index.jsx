@@ -335,12 +335,12 @@ class ActivityLog extends Component {
 		const logsGroupedByDate = map(
 			groupBy(
 				logs.map( this.update_logs, this ),
-				( log ) => moment( log.timestamp ).startOf( 'day' ).toISOString()
+				log => moment( log.timestamp ).startOf( 'day' ).format( 'x' )
 			),
-			( daily_logs, isoString ) => (
+			( daily_logs, timestamp ) => (
 				<ActivityLogDay
-					key={ isoString }
-					dateIsoString={ isoString }
+					key={ timestamp }
+					timestamp={ '1497391200000' }
 					logs={ daily_logs }
 					siteId={ siteId }
 					isRewindEnabled={ true }
