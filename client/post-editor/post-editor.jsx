@@ -89,7 +89,8 @@ export const PostEditor = React.createClass( {
 			showVerifyEmailDialog: false,
 			showAutosaveDialog: true,
 			isLoadingAutosave: false,
-			isTitleFocused: false
+			isTitleFocused: false,
+			showPreview: false
 		};
 	},
 
@@ -188,10 +189,19 @@ export const PostEditor = React.createClass( {
 		return this.props.setLayoutFocus( 'content' );
 	},
 
-	setConfirmationSidebar: function( state ) {
-		const allowedStates = [ 'closed', 'open', 'publishing' ];
-		const confirmationSidebar = allowedStates.indexOf( state ) > -1 ? state : 'closed';
+	setConfirmationSidebar: function( { status, context = null } ) {
+		const allowedStatuses = [ 'closed', 'open', 'publishing' ];
+		const confirmationSidebar = allowedStatuses.indexOf( status ) > -1 ? status : 'closed';
 		this.setState( { confirmationSidebar } );
+
+		switch ( confirmationSidebar ) {
+			case 'closed':
+				analytics.tracks.recordEvent( 'calypso_editor_confirmation_sidebar_close', { context } );
+				break;
+			case 'open':
+				analytics.tracks.recordEvent( 'calypso_editor_confirmation_sidebar_open' );
+				break;
+		}
 	},
 
 	toggleSidebar: function() {
@@ -233,9 +243,9 @@ export const PostEditor = React.createClass( {
 					onPublish={ this.onPublish }
 					post={ this.state.post }
 					savedPost={ this.state.savedPost }
-					setState={ this.setConfirmationSidebar }
+					setStatus={ this.setConfirmationSidebar }
 					site={ site }
-					state={ this.state.confirmationSidebar }
+					status={ this.state.confirmationSidebar }
 				/>
 				<EditorDocumentHead />
 				<EditorPostTypeUnsupported />
@@ -358,6 +368,8 @@ export const PostEditor = React.createClass( {
 							isLoading={ this.state.isLoading }
 							previewUrl={ this.state.previewUrl }
 							externalUrl={ this.state.previewUrl }
+							editUrl={ this.props.editPath }
+							defaultViewportDevice={ config.isEnabled( 'post-editor/delta-post-publish-preview' ) ? 'computer' : 'tablet' }
 						/>
 						: null }
 				</div>
@@ -665,12 +677,12 @@ export const PostEditor = React.createClass( {
 		};
 
 		if ( config.isEnabled( 'post-editor/delta-post-publish-flow' ) && false === isConfirmed ) {
-			this.setConfirmationSidebar( 'open' );
+			this.setConfirmationSidebar( { status: 'open' } );
 			return;
 		}
 
 		if ( config.isEnabled( 'post-editor/delta-post-publish-flow' ) ) {
-			this.setConfirmationSidebar( 'publishing' );
+			this.setConfirmationSidebar( { status: 'publishing' } );
 		}
 
 		// determine if this is a private publish
@@ -702,7 +714,7 @@ export const PostEditor = React.createClass( {
 		this.onSaveFailure( error, 'publishFailure' );
 
 		if ( config.isEnabled( 'post-editor/delta-post-publish-flow' ) ) {
-			this.setConfirmationSidebar( 'closed' );
+			this.setConfirmationSidebar( { status: 'closed', context: 'publish_failure' } );
 		}
 	},
 
@@ -719,7 +731,7 @@ export const PostEditor = React.createClass( {
 		}
 
 		if ( config.isEnabled( 'post-editor/delta-post-publish-flow' ) ) {
-			this.setConfirmationSidebar( 'closed' );
+			this.setConfirmationSidebar( { status: 'closed', context: 'publish_success' } );
 		}
 
 		this.onSaveSuccess( message, ( message === 'published' ? 'view' : 'preview' ), savedPost.URL );
@@ -812,10 +824,14 @@ export const PostEditor = React.createClass( {
 				status: 'is-success',
 				message,
 				action,
-				link
+				link: config.isEnabled( 'post-editor/delta-post-publish-preview' ) ? null : link,
 			};
 
 			window.scrollTo( 0, 0 );
+
+			if ( config.isEnabled( 'post-editor/delta-post-publish-preview' ) && this.props.isSitePreviewable ) {
+				this.iframePreview();
+			}
 		} else {
 			nextState.notice = null;
 		}

@@ -4,11 +4,14 @@
 import React from 'react';
 import url from 'url';
 import omit from 'lodash/omit';
+import classNames from 'classnames';
 
 /**
  * Internal dependencies
  */
+import config from 'config';
 import WebPreview from 'components/web-preview';
+import WebPreviewContent from 'components/web-preview/content';
 
 const EditorPreview = React.createClass( {
 
@@ -19,6 +22,7 @@ const EditorPreview = React.createClass( {
 		isSaving: React.PropTypes.bool,
 		isLoading: React.PropTypes.bool,
 		previewUrl: React.PropTypes.string,
+		editUrl: React.PropTypes.string,
 		onClose: React.PropTypes.func,
 		postId: React.PropTypes.number
 	},
@@ -91,15 +95,32 @@ const EditorPreview = React.createClass( {
 	},
 
 	render() {
+		const previewFlow = config.isEnabled( 'post-editor/delta-post-publish-preview' );
+		const className = classNames( 'editor-preview', {
+			'is-fullscreen': previewFlow,
+		} );
+
 		return (
-			<WebPreview
-				showPreview={ this.props.showPreview }
-				defaultViewportDevice="tablet"
-				onClose={ this.props.onClose }
-				previewUrl={ this.state.iframeUrl }
-				externalUrl={ this.cleanExternalUrl( this.props.externalUrl ) }
-				loadingMessage="Beep beep boop…"
-			/>
+			<div className={ className }>
+				{ previewFlow
+					? <WebPreviewContent
+							showPreview={ this.props.showPreview }
+							showEdit={ true }
+							showExternal={ false }
+							defaultViewportDevice={ this.props.defaultViewportDevice }
+							onClose={ this.props.onClose }
+							previewUrl={ this.state.iframeUrl }
+							editUrl={ this.props.editUrl }
+						/>
+					: <WebPreview
+							showPreview={ this.props.showPreview }
+							defaultViewportDevice={ this.props.defaultViewportDevice }
+							onClose={ this.props.onClose }
+							previewUrl={ this.state.iframeUrl }
+							externalUrl={ this.cleanExternalUrl( this.props.externalUrl ) }
+						/>
+				}
+			</div>
 		);
 	}
 } );

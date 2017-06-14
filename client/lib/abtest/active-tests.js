@@ -93,22 +93,6 @@ module.exports = {
 		},
 		defaultVariation: 'show',
 	},
-	siteCreationStepOne: {
-		datestamp: '20170524',
-		variations: {
-			original: 50,
-			modified: 50,
-		},
-		defaultVariation: 'original',
-	},
-	selectCtaInDomainsSignup: {
-		datestamp: '20170529',
-		variations: {
-			original: 50,
-			select: 50,
-		},
-		defaultVariation: 'original',
-	},
 	pulsingCartTestingAB: {
 		datestamp: '20170601',
 		variations: {
@@ -118,5 +102,13 @@ module.exports = {
 		defaultVariation: 'original',
 		allowExistingUsers: true,
 		localeTargets: 'any',
+	},
+	signupProgressIndicator: {
+		datestamp: '20170612',
+		variations: {
+			original: 50,
+			wizardbar: 50,
+		},
+		defaultVariation: 'original',
 	},
 };

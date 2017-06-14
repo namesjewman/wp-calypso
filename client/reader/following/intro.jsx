@@ -14,9 +14,6 @@ import QueryPreferences from 'components/data/query-preferences';
 import { savePreference } from 'state/preferences/actions';
 import { getPreference } from 'state/preferences/selectors';
 import { recordTrack } from 'reader/stats';
-import { getCurrentUserId } from 'state/current-user/selectors';
-
-const isEven = number => number % 2 === 0;
 
 class FollowingIntro extends React.Component {
 	componentDidMount() {
@@ -36,11 +33,10 @@ class FollowingIntro extends React.Component {
 	};
 
 	render() {
-		const { isNewReader, translate, dismiss, userId } = this.props;
+		const { isNewReader, translate, dismiss } = this.props;
 		const linkElement = <a onClick={ this.props.handleManageLinkClick } href="/following/manage" />;
 
-		// Only show the banner to new Readers with an odd user ID (simple A/B test)
-		if ( ! isNewReader || ! userId || isEven( userId ) ) {
+		if ( ! isNewReader ) {
 			return null;
 		}
 
@@ -60,7 +56,7 @@ class FollowingIntro extends React.Component {
 									strong: <strong />,
 									span: <span className="following__intro-copy-hidden" />,
 								},
-							}
+							},
 						) }
 					</div>
 
@@ -88,7 +84,6 @@ export default connect(
 	state => {
 		return {
 			isNewReader: getPreference( state, 'is_new_reader' ),
-			userId: getCurrentUserId( state ),
 		};
 	},
 	dispatch =>
@@ -103,6 +98,6 @@ export default connect(
 					return savePreference( 'is_new_reader', false );
 				},
 			},
-			dispatch
-		)
+			dispatch,
+		),
 )( localize( FollowingIntro ) );

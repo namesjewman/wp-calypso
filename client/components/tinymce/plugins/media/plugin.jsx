@@ -226,6 +226,12 @@ function mediaButton( editor ) {
 			if ( current.media.transient ) {
 				transients++;
 				isTransientDetected = true;
+
+				// Mark the image as a transient in upload
+				editor.dom.$( img ).toggleClass( 'is-transient', true );
+			} else {
+				// Remove the transient flag if present
+				editor.dom.$( img ).toggleClass( 'is-transient', false );
 			}
 
 			if (
@@ -312,7 +318,7 @@ function mediaButton( editor ) {
 
 			// To avoid an undesirable flicker after the image uploads but
 			// hasn't yet been loaded, we preload the image before rendering.
-			const imageUrl = media.URL;
+			const imageUrl = event.resizedImageUrl || media.URL;
 			if ( ! loadedImages.isLoaded( imageUrl ) ) {
 				const preloadImage = new Image();
 				preloadImage.src = imageUrl;
@@ -831,8 +837,8 @@ function mediaButton( editor ) {
 	// send contextmenu event up to desktop app
 	if ( config.isEnabled( 'desktop' ) ) {
 		const ipc = require( 'electron' ).ipcRenderer; // From Electron
-		editor.on( 'contextmenu', function( ev ) {
-			ipc.send( 'mce-contextmenu', ev );
+		editor.on( 'contextmenu', function() {
+			ipc.send( 'mce-contextmenu', { sender: true } );
 		} );
 	}
 
