@@ -21,7 +21,7 @@ import ErrorBanner from '../activity-log-banner/error-banner';
 import ProgressBanner from '../activity-log-banner/progress-banner';
 import SuccessBanner from '../activity-log-banner/success-banner';
 import QueryRewindStatus from 'components/data/query-rewind-status';
-import { activityLogRequest as activityLogRequestAction } from 'state/activity-log/actions';
+import QueryActivityLog from 'components/data/query-activity-log';
 
 class ActivityLog extends Component {
 	static propTypes = {
@@ -40,16 +40,6 @@ class ActivityLog extends Component {
 		moment: PropTypes.func.isRequired,
 		translate: PropTypes.func.isRequired,
 	};
-
-	componentWillMount() {
-		this.tryFetchLogs( this.props.siteId );
-	}
-
-	componentWillUpdate( { siteId } ) {
-		if ( siteId !== this.props.siteId ) {
-			this.tryFetchLogs( siteId );
-		}
-	}
 
 	componentDidMount() {
 		window.scrollTo( 0, 0 );
@@ -368,6 +358,7 @@ class ActivityLog extends Component {
 		return (
 			<Main wideLayout={ true }>
 				<QueryRewindStatus siteId={ siteId } />
+				<QueryActivityLog siteId={ siteId } />
 				<StatsFirstView />
 				<SidebarNavigation />
 				<StatsNavigation
@@ -398,7 +389,5 @@ export default connect(
 				siteId,
 			], [] ),
 		};
-	}, {
-		activityLogRequest: activityLogRequestAction,
 	}
 )( localize( ActivityLog ) );
