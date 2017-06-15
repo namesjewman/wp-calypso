@@ -11,6 +11,7 @@ import page from 'page';
  * Internal dependencies
  */
 import config, { isEnabled } from 'config';
+import DocumentHead from 'components/data/document-head';
 import ExternalLink from 'components/external-link';
 import Gridicon from 'gridicons';
 import Main from 'components/main';
@@ -127,6 +128,8 @@ export class Login extends React.Component {
 		return (
 			<Main className="wp-login">
 				{ this.renderLocaleSuggestions() }
+
+				<DocumentHead title={ translate( 'Log In', { textOnly: true } ) } />
 
 				<GlobalNotices id="notices" notices={ notices.list } />
 
