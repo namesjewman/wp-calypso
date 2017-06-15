@@ -123,7 +123,8 @@ const webpackConfig = {
 			'PROJECT_NAME': JSON.stringify( config( 'project' ) )
 		} ),
 		new webpack.IgnorePlugin( /^props$/ ),
-		new CopyWebpackPlugin( [ { from: 'node_modules/flag-icon-css/flags/4x3', to: 'images/flags' } ] )
+		new CopyWebpackPlugin( [ { from: 'node_modules/flag-icon-css/flags/4x3', to: 'images/flags' } ] ),
+		new webpack.HashedModuleIdsPlugin(),
 	],
 	externals: [ 'electron' ]
 };
