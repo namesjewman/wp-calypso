@@ -107,7 +107,7 @@ const webpackConfig = {
 	},
 	plugins: [
 		// Require source-map-support at the top, so we get source maps for the bundle
-		// new webpack.BannerPlugin( { banner: 'require( "source-map-support" ).install();', raw: true, entryOnly: false } ),
+		new webpack.BannerPlugin( { banner: 'require( "source-map-support" ).install();', raw: true, entryOnly: false } ),
 		new webpack.DefinePlugin( {
 			'PROJECT_NAME': JSON.stringify( config( 'project' ) )
 		} ),
