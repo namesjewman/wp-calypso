@@ -29,7 +29,10 @@ QueryWhois.propTypes = {
 	requestWhois: PropTypes.func.isRequired
 };
 
+const mapStateToProps = ( state, { domain } ) =>
+	( { requesting: isRequestingWhois( state, domain ) } );
+
 export default connect(
-	( state, { domain } ) => ( { requesting: isRequestingWhois( state, domain ) } ),
+	mapStateToProps,
 	{ requestWhois }
 )( QueryWhois );

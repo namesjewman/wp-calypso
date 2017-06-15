@@ -355,7 +355,9 @@ class RegistrantExtraInfoForm extends React.PureComponent {
 	}
 }
 
+const mapStateToProps = state => ( { contactDetails: getContactDetailsCache( state ) } );
+
 export default connect(
-	state => ( { contactDetails: getContactDetailsCache( state ) } ),
+	mapStateToProps,
 	{ updateContactDetailsCache }
 )( localize( RegistrantExtraInfoForm ) );
